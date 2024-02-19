@@ -125,8 +125,8 @@ public class AdminControllerRest {
     @ApiOperation(value = "Обновляет пользователя в БД")
     @PutMapping("/users")
     public void updateUser(@RequestBody User user) {
+        userService.update(user);
         System.out.println("обновленный юзер: " + user);
-//        userService.update(user);
     }
 
     @ApiOperation(value = "Обновляет айтем в БД")

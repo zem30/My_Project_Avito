@@ -33,7 +33,7 @@ public class Shop {
     private String email;
 
 
-    @Length(min = 11, max = 12, message = "Длина номера должна быть 11 либо 12 сиволов")
+    @Length(min = 11, max = 12, message = "Длина номера должна быть 11 либо 12 символов")
     private String phone;
 
     @NotBlank(message = "Введите описание магазина")
@@ -49,9 +49,11 @@ public class Shop {
     private List<Item> items;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JsonIgnore
     private List<Coupon> coupons;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JsonIgnore
     private List<Order> orders;
 
     @JsonIgnore
@@ -88,5 +90,6 @@ public class Shop {
     private MultipartFile file;
     @JsonIgnore
     private boolean isPretendentToBeDeleted = false;
+
 
 }

@@ -16,3 +16,4 @@ public class ProjectApplication {
 
     }
 }
+//jdbc:mysql://localhost:3307/my_project_sql

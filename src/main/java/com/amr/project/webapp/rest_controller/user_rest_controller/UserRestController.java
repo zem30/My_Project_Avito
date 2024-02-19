@@ -42,7 +42,7 @@ public class UserRestController {
     }
 
     @PostMapping("/registration")
-    @ApiOperation(value = "Валидация пользователя , поиск пользователя по ключевыйм полям в бд и дальнейшая регистрация ")
+    @ApiOperation(value = "Валидация пользователя , поиск пользователя по ключевым полям в бд и дальнейшая регистрация ")
     public ResponseEntity<?> registrationNewUser(@Valid @RequestBody User user) {
         Map<String, Object> body = new LinkedHashMap<>();
         User registeredUser = userService.findByEmail(user.getEmail());

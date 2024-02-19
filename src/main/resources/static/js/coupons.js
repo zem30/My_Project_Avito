@@ -59,7 +59,7 @@ async function updateToOverdue(id) {
     await fetch("/api/coupon/update/overdue/" + id, {
         method: 'PUT',
         // body: JSON.stringify(coupon),
-        headers: {"Content-Type": "application/json; charset=utf-8"}
+        headers: {"Content-Type": "application/json"}
     })
     // .then(res => {console.log(res)})
 }

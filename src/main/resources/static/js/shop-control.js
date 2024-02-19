@@ -150,7 +150,7 @@ $('#update').on('click', (event) => {
             shopId: shopDto.id,
             images : arrForEditImages
         }),
-        headers: { "Content-Type": "application/json; charset=utf-8" }
+        headers: { "Content-Type": "application/json" }
     }).then((res) => {
         alert("Item`s been updated successfully");
         console.log(res);
@@ -189,7 +189,7 @@ $("#addItem").on('click', () => {
             images: images,
             categoriesName: categoryNameFromSelect
         }),
-        headers: {"Content-Type": "application/json; charset=utf-8"}
+        headers: {"Content-Type": "application/json"}
     }).then(res => {
         // console.log(res)
         // alert("Item`s been added")
@@ -220,7 +220,7 @@ async function updateToOverdue(coupon){
     await fetch('/api/coupon/update/overdue/' + coupon.id, {
         method: 'PUT',
         body: JSON.stringify(coupon),
-        headers: { "Content-Type": "application/json; charset=utf-8" }
+        headers: { "Content-Type": "application/json" }
     }).then(res => {
         // console.log(res)
     })
@@ -238,7 +238,7 @@ $("#addNewCoupon").on('click', () => {
             sum: $('#sum').val(),
             username: select.value
         }),
-        headers: {"Content-Type": "application/json; charset=utf-8"}
+        headers: {"Content-Type": "application/json"}
     }).then(res => {
         // console.log(res);
     })

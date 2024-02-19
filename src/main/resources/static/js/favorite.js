@@ -75,7 +75,7 @@ async function deleteFavoriteItem(id){
     console.log("after" + id);
     const response = await fetch(url, {
 
-        headers: { "Content-Type": "application/json; charset=utf-8" },
+        headers: { "Content-Type": "application/json" },
         method: 'DELETE'
     })
     drawShoppingCart();

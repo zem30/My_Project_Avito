@@ -94,7 +94,7 @@ async function getUnmoderatedReviews() {
 function deleteUser(id) {
     fetch("http://localhost:8888/api/review/deleteReview/" + id, {
         method: "DELETE",
-        headers: {"Content-type": "application/json; charset=UTF-8"}
+        headers: {"Content-type": "application/json"}
     })
         .then(res => {
             $('#' + id).remove();
@@ -118,7 +118,7 @@ function edit() {
     fetch('/api/review/update', {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
+            'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
         body: JSON.stringify({

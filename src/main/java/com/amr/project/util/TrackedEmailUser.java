@@ -18,7 +18,7 @@ public class TrackedEmailUser {
 
     public Mail trackedEmailUserUpdate(User user, String password) {
         Mail mail = new Mail();
-        String message = "Пользователь изменилься: ";
+        String message = "Пользователь изменился: ";
 
         User userOriginal = trackedEmailService.getUserDao().getByKey(user.getId());
 
@@ -58,7 +58,7 @@ public class TrackedEmailUser {
 
         for (Discount discount : discounts) {
             if (!discountsOriginal.contains(discount))
-                message += "Был добавлин discount: " + discount.toString();
+                message += "Был добавлен discount: " + discount.toString();
         }
 
         for (Discount discount : discountsOriginal) {

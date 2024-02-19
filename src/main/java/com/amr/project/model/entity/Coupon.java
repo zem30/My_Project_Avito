@@ -1,10 +1,13 @@
 package com.amr.project.model.entity;
 
 import com.amr.project.model.enums.CouponStatus;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -28,5 +31,9 @@ public class Coupon {
     private Calendar end;
     private CouponStatus status;
     private Integer sum;
+
+    @ManyToMany
+    @Transient
+    private List<User> user;
 
 }

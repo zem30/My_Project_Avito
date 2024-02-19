@@ -10,7 +10,7 @@ function send_data(url, data, method) {
     const response = fetch(url, {
         method: method,
         headers: {
-            "Content-Type": "application/json;charset=utf-8"
+            "Content-Type": "application/json"
         },
         body: data,
     })
@@ -20,7 +20,7 @@ function basket_data(url, data, method){
     const response = fetch(url, {
         method: method,
         headers: {
-            "Content-Type": "application/json;charset=utf-8"
+            "Content-Type": "application/json"
         },
         body: data,
     }).then(res => res.json())

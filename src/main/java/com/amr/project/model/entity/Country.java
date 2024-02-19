@@ -3,12 +3,14 @@ package com.amr.project.model.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import springfox.documentation.annotations.ApiIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "country")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ApiIgnore
@@ -19,6 +21,7 @@ public class Country {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     @Column(unique = true)
     private String name;

@@ -33,7 +33,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 @RequiredArgsConstructor
-@Api(tags = {"API для работы c главной страницей и получение списков предметов в корзине, категории товаров, преметов и магазинов"})
+@Api(tags = {"API для работы c главной страницей и получение списков предметов в корзине, категории товаров, предметов и магазинов"})
 public class HomePageController {
 
     private final CartItemService cartItemService;
@@ -51,7 +51,7 @@ public class HomePageController {
     }
 
     @RequestMapping("home")
-    @ApiOperation(value = "получение списков получение списков предметов в корзине, категории товаров, преметов и магазинов")
+    @ApiOperation(value = "получение списков получение списков предметов в корзине, категории товаров, предметов и магазинов")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Списки главной страницы получены")})
     public String homePage(Model model) {
         List<CartItemDto> cartItemDto = new ArrayList<>();

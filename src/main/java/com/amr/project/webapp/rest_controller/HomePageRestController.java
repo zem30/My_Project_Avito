@@ -26,7 +26,6 @@ public class HomePageRestController {
     private final ShopServiceImpl shopService;
     private final ShopMapper shopMapper;
 
-
     @ApiOperation(value = "получение списка магазинов")
     @GetMapping("allShops")
     @ApiResponses(value = {

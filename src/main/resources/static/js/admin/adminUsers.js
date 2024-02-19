@@ -65,7 +65,7 @@ function addUserRow(user) {
             .append($('<td>').attr('id', 'userData[' + user.id + '][shops]').text(user.shops))
             .append($('<td>').attr('id', 'userData[' + user.id + '][favorite]').text(user.favorite))
             .append($('<td>').attr('id', 'userData[' + user.id + '][discounts]').text(user.discounts))
-            .append($('<td>').append($('<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userEditModal">')
+            .append($('<td>').append($('<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#userEditModal">')
                 .click(() => {
                     loadAndShowModalEditUserForm(user.id);
                 }).text('Изменить')))
@@ -125,7 +125,7 @@ function loadAndShowModalEditUserForm(id) {
                         'favorite': userEditModal.find('#userFavoriteEdit').val(),
                         'discounts': userEditModal.find('#userDiscountEdit').val()
                     };
-                    let request = new Request('/admin/api/users/', {
+                    let request = new Request('/admin/api/users', {
                         method: 'PUT',
                         headers: {'content-type': 'application/json'},
                         body: JSON.stringify(user)
@@ -171,7 +171,7 @@ usersAddModal.find(':submit').click(() => {
         'favorite': usersAddModal.find('#userFavoriteAdd').val(),
         'discounts': usersAddModal.find('#userDiscountAdd').val()
     };
-    let request = new Request('/admin/api/users/', {
+    let request = new Request('/admin/api/users', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(user)

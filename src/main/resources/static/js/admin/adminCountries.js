@@ -40,7 +40,7 @@ function addCountryRow(address) {
 }
 
 function loadAndShowModalEditCountryForm(id) {
-    fetch('/admin/api/countries/' + id, {method: 'GET'})
+    fetch('/admin/api/countries' + id, {method: 'GET'})
         .then(function (response) {
             response.json().then(function (country) {
                 countryEditModal.find('#countryIdEdit').val(id);
@@ -50,7 +50,7 @@ function loadAndShowModalEditCountryForm(id) {
                         'id': parseInt(countryEditModal.find('#countryIdEdit').val()),
                         'name': countryEditModal.find('#countryNameEdit').val()
                     };
-                    let request = new Request('/admin/api/countries/', {
+                    let request = new Request('/admin/api/countries', {
                         method: 'PUT',
                         headers: {'content-type': 'application/json'},
                         body: JSON.stringify(country)

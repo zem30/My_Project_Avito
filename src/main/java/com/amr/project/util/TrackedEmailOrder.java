@@ -16,7 +16,7 @@ public class TrackedEmailOrder {
     public Mail trackedEmailOrderPersist(Order order) {
         Mail mail = new Mail();
         mail.setTo(order.getUser().getEmail());
-        mail.setMessage("Был оформлен заказа " + order.getDate() + order.getId() + "Статутс заказа" + order.getStatus());
+        mail.setMessage("Был оформлен заказа " + order.getDate() + order.getId() + "Статус заказа" + order.getStatus());
         return mail;
     }
 

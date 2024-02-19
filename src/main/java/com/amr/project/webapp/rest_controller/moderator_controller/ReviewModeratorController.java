@@ -72,7 +72,7 @@ public class ReviewModeratorController {
         return ResponseEntity.badRequest().build();
     }
 
-    @ApiOperation(value = "возвращает на фронт количество не прошедних модерацию отзывов для счетчика")
+    @ApiOperation(value = "возвращает на фронт количество не прошедших модерацию отзывов для счетчика")
     @GetMapping("/getUnmoderatedReviewsCount")
     public ResponseEntity<Long> getUnmoderatedReviewsCount() {
         return ResponseEntity.ok((long) reviewService

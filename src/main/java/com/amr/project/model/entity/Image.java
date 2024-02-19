@@ -47,6 +47,10 @@ public class Image {
     @ManyToMany(mappedBy = "images")
     private List<Advert> adverts;
 
+    public Image(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "Image{" +

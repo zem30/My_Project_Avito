@@ -59,7 +59,7 @@ public class ItemModeratorController {
         }
         return ResponseEntity.badRequest().build();
     }
-    @ApiOperation(value = "возвращает на фронт количество не прошедних модерацию товаров для счетчика")
+    @ApiOperation(value = "возвращает на фронт количество не прошедших модерацию товаров для счетчика")
     @GetMapping("/getUnmoderatedItemsCount")
     public ResponseEntity<Long> getUnmoderatedItemsCount() {
         int size = itemService.getUnmoderatedItems().size();
