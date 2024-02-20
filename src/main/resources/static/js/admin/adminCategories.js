@@ -28,6 +28,7 @@ function addCategoriesRow(category) {
     categoriesTable
         .append($('<tr>').attr('id', 'categoryRowId[' + category.id + ']')
             .append($('<td>').attr('id', 'categoryData[' + category.id + '][id]').text(category.id))
+            .append($('<td>').attr('guid', 'categoryData[' + category.guid + '][id]').text(category.guid))
             .append($('<td>').attr('id', 'categoryData[' + category.id + '][name]').text(category.name))
             .append($('<td>').append($('<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryEditForm">')
                 .click(() => {
@@ -41,7 +42,7 @@ function addCategoriesRow(category) {
 }
 
 function loadAndShowModalEditCategoryForm(id) {
-    fetch('/admin/api/categories/' + id, {method: 'GET'})
+    fetch('/admin/api/categories' + id, {method: 'GET'})
         .then(function (response) {
             response.json().then(function (category) {
                 categoryEditModal.find('#categoryIdEdit').val(id);
@@ -51,7 +52,7 @@ function loadAndShowModalEditCategoryForm(id) {
                         'id': parseInt(categoryEditModal.find('#categoryIdEdit').val()),
                         'name': categoryEditModal.find('#categoryNameEdit').val()
                     };
-                    let request = new Request('/admin/api/categories/', {
+                    let request = new Request('/admin/api/categories', {
                         method: 'PUT',
                         headers: {'content-type': 'application/json'},
                         body: JSON.stringify(category)
@@ -78,7 +79,7 @@ categoryAddModal.find(':submit').click(() => {
     let category = {
         'name': categoryAddModal.find('#categoryNameAdd').val()
     }
-    let request = new Request('/admin/api/categories/', {
+    let request = new Request('/admin/api/categories', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(category)

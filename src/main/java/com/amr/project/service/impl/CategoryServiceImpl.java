@@ -38,23 +38,23 @@ public class CategoryServiceImpl extends ReadWriteServiceImpl<Category, Long> im
     @Override
     @Transactional
     public void persist(Category category) {
-        emailSenderService.sendSimpleEmail(trackedEmailCategory.trackedEmailCategoryPersist(category));
+//        emailSenderService.sendSimpleEmail(trackedEmailCategory.trackedEmailCategoryPersist(category));
         categoryDao.persist(category);
     }
 
     @Override
     @Transactional
     public void update(Category category) {
-        Mail mail = trackedEmailCategory.trackedEmailCategoryUpdate(category);
-        if (mail.getMessage() != null)
-            emailSenderService.sendSimpleEmail(mail);
+//        Mail mail = trackedEmailCategory.trackedEmailCategoryUpdate(category);
+//        if (mail.getMessage() != null)
+//            emailSenderService.sendSimpleEmail(mail);
         categoryDao.update(category);
     }
 
     @Override
     @Transactional
     public void deleteByKeyCascadeIgnore(Long key) {
-        emailSenderService.sendSimpleEmail(trackedEmailCategory.trackedEmailCategoryDelete(key));
+//        emailSenderService.sendSimpleEmail(trackedEmailCategory.trackedEmailCategoryDelete(key));
         categoryDao.deleteByKeyCascadeIgnore(key);
     }
 }

@@ -21,10 +21,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static java.time.LocalTime.now;
 
@@ -547,12 +544,12 @@ public class DataInserting {
         userRepository.save(user1);
 
 //---------------------------------------------------------------Categories
-        Category category1 = Category.builder().name("headphones").build();
-        Category hardware = Category.builder().name("hardware").build();
-        Category tablets = Category.builder().name("tablets").build();
-        Category vacuumCleaners = Category.builder().name("vacuumCleaners").build();
-        Category TV = Category.builder().name("TV").build();
-        Category laptop = Category.builder().name("laptop").build();
+        Category category1 = Category.builder().name("headphones").guid(UUID.randomUUID()).build();
+        Category hardware = Category.builder().name("hardware").guid(UUID.randomUUID()).build();
+        Category tablets = Category.builder().name("tablets").guid(UUID.randomUUID()).build();
+        Category vacuumCleaners = Category.builder().name("vacuumCleaners").guid(UUID.randomUUID()).build();
+        Category TV = Category.builder().name("TV").guid(UUID.randomUUID()).build();
+        Category laptop = Category.builder().name("laptop").guid(UUID.randomUUID()).build();
 
         categoryRepository.save(category1);
         categoryRepository.save(hardware);

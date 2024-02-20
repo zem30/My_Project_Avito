@@ -105,7 +105,7 @@ public class UserServiceImpl extends ReadWriteServiceImpl<User, Long> implements
                 .build();
         user.setAddress(address);
         userRepository.save(user);
-        verificationService.sendVerificationEmail(user);
+//        verificationService.sendVerificationEmail(user);
     }
 
     @Override
@@ -117,7 +117,7 @@ public class UserServiceImpl extends ReadWriteServiceImpl<User, Long> implements
     @Override
     @Transactional
     public void delete(User user) {
-        emailSenderService.sendSimpleEmail(trackedEmailUser.trackedEmailUserDelete(user));
+//        emailSenderService.sendSimpleEmail(trackedEmailUser.trackedEmailUserDelete(user));
         userDao.delete(user);
     }
 
